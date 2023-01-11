@@ -16,8 +16,8 @@ def search_city(query):
     response = requests.get(url).json()
     if len(response) > 1:
         print("Multiple matches found, which city did you mean?")
-        for i, e in enumerate(response):
-            print(f"{i+1} {e['name']} {e['country']}")
+        for i, ele in enumerate(response):
+            print(f"{i+1} {ele['name']} {ele['country']}")
         option = int(input("Option?\n> ")) -1
         city = response[option]
         city_info = {"name": city["name"], "lat": city['lat'], "lon": city['lon']}
